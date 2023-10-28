@@ -26,4 +26,29 @@ public class Conta {
         numero = novoNumero;
     }
 
+    public double getSaldo(){
+        return saldo;
+    }
+
+    public void setSaldo(double novoSaldo){
+        saldo = novoSaldo;
+    }
+
+    public double getTaxaDeJuros(){
+        return taxaDeJuros;
+    }
+
+    public void setTaxaDeJuros(double novaTaxaDeJuros){
+        taxaDeJuros = novaTaxaDeJuros;
+    }
+
+    public void creditar(double valor){
+        saldo = saldo + valor;
+    }
+
+    public void debitar(double valor){
+        saldo = saldo - valor;
+    }
+
+
 }
