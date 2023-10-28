@@ -2,15 +2,29 @@ package br.sereducacional.bes.exemplo.aula;
 
 import br.sereducacional.bes.exemplo.aula.entidades.Cliente;
 import br.sereducacional.bes.exemplo.aula.entidades.Conta;
+import br.sereducacional.bes.exemplo.aula.entidades.ContaCorrente;
 import br.sereducacional.bes.exemplo.aula.entidades.Poupanca;
-import br.sereducacional.bes.exemplo.aula.repositorio.ContaRepositorio;
+import br.sereducacional.bes.exemplo.aula.repositorio.ContaRepositorioOracle;
+import br.sereducacional.bes.exemplo.aula.repositorio.IContaRepositorio;
 
 public class BesMain  {
 
     public static void main(String[] args) {
 
 
-        ContaRepositorio contaRepositorio = new ContaRepositorio();
+        IContaRepositorio contaRepositorio = new ContaRepositorioOracle();
+
+        ContaCorrente contaCorrente = new ContaCorrente("cc1", 0001, 1234, 100, 1000);
+        contaCorrente.debitar(100);
+        contaCorrente.debitar(500);
+        contaCorrente.debitar(300);
+        System.out.println(contaCorrente);
+
+        Poupanca p3 = new Poupanca("p3", 0001, 1234, 100);
+        p3.debitar(50);
+        System.out.println(p3);
+
+        System.out.println("----------------------");
 
         System.out.println( "Você tera uma valor apos 10 meses de :" +
                 Conta.simulacaoInvestimento(100, 10)

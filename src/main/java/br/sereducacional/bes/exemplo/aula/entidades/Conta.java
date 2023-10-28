@@ -67,6 +67,10 @@ public class Conta extends Object{
     }
 
     public void debitar(double valor){
+        if(valor > getSaldo()){
+            throw new RuntimeException("Cliente não possui saldo suficiente");
+        }
+
         saldo = saldo - valor;
     }
 
