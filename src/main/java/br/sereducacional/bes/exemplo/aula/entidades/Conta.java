@@ -1,6 +1,6 @@
 package br.sereducacional.bes.exemplo.aula.entidades;
 
-public class Conta {
+public class Conta extends Object{
 
     private String nome;
 
@@ -10,7 +10,20 @@ public class Conta {
 
     private double saldo;
 
-    private double taxaDeJuros = 0.01;
+    private static final double taxaDeJurosFinanciamento = 1.1;
+
+    public Conta(String nomeConta, int agenciaConta, long numeroConta, double saldoInicial){
+        System.out.println("Criando objeto da conta de nome: " + nomeConta);
+
+        if(saldoInicial < 100) {
+            throw new RuntimeException("Não é possível abrir contas com menos de 100 reais");
+        }
+
+        nome = nomeConta;
+        agencia = agenciaConta;
+        numero = numeroConta;
+        saldo = saldoInicial;
+    }
 
     public String getNome(){
         return nome;
@@ -44,15 +57,12 @@ public class Conta {
         saldo = novoSaldo;
     }
 
-    public double getTaxaDeJuros(){
-        return taxaDeJuros;
-    }
-
-    public void setTaxaDeJuros(double novaTaxaDeJuros){
-        taxaDeJuros = novaTaxaDeJuros;
+    public static double getTaxaDeJurosFinanciamento(){
+        return taxaDeJurosFinanciamento;
     }
 
     public void creditar(double valor){
+        System.out.println("creditar da classe conta");
         saldo = saldo + valor;
     }
 
@@ -66,5 +76,19 @@ public class Conta {
 
         System.out.println("Irá realizar o credito em: " + contaDestino.getNome());
         contaDestino.creditar(valor);
+    }
+
+    public static double simulacaoInvestimento(double investimentoInicial, int quantidadeDeMeses){
+        return investimentoInicial * quantidadeDeMeses * taxaDeJurosFinanciamento;
+    }
+
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "nome='" + nome + '\'' +
+                // ", agencia=" + agencia +
+                // ", numero=" + numero +
+                ", saldo=" + saldo +
+                '}';
     }
 }

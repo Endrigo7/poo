@@ -4,7 +4,7 @@ package org.example.orientadoaobjetos;
 public class TrianguloOrientadoObjetos {
 
     public static void main(String[] args) {
-        Triangulo t1 = new Triangulo(3, 3, 3);
+        Triangulo t1 = new Triangulo(4, 8, 9);
         Triangulo t2 = new Triangulo(8, 8, 8);
 
         if(t1.calcularArea() > t2.calcularArea()){
