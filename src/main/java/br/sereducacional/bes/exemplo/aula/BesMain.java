@@ -1,21 +1,23 @@
-package br.sereducacional.bes.exemplo.aula.entidades;
+package br.sereducacional.bes.exemplo.aula;
 
-public class BesMain extends Conta{
+import br.sereducacional.bes.exemplo.aula.entidades.Conta;
+
+public class BesMain extends Conta {
 
     public static void main(String[] args) {
         Conta c1 = new Conta();    // 0x10
-        c1.agencia = 0001;
-        c1.numero = 1234;
+        c1.setAgencia(0001);
+        c1.setNumero(1234);
         c1.saldo = 100;
 
         Conta c2 = new Conta();    //0x11
-        c2.agencia = 0001;
-        c2.numero = 1234;
+        c2.setAgencia(0001) ;
+        c2.setNumero(1234);
         c2.saldo = 100;
 
         Conta c3 = new Conta();    //0x12
-        c3.agencia = 0001;
-        c3.numero = 1234;
+        c3.setAgencia(0001);
+        c3.setNumero(1234);
         c3.saldo = 100;
 
         c1.saldo = 150;

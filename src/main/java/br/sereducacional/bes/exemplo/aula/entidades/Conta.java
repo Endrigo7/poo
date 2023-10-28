@@ -2,12 +2,28 @@ package br.sereducacional.bes.exemplo.aula.entidades;
 
 public class Conta {
 
-    int agencia;
+    private int agencia;  //0001
 
-    long numero;
+    private long numero;
 
-    double saldo;
+    private double saldo;
 
-    double taxaDeJuros = 0.01;
+    private double taxaDeJuros = 0.01;
+
+    public int getAgencia(){
+        return agencia;
+    }
+
+    public void setAgencia(int novaAgencia){
+        agencia = novaAgencia;
+    }
+
+    public long getNumero(){
+        return numero;
+    }
+
+    public void setNumero(long novoNumero){
+        numero = novoNumero;
+    }
 
 }
