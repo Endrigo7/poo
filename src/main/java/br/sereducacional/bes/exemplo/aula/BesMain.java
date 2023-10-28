@@ -6,16 +6,19 @@ public class BesMain extends Conta {
 
     public static void main(String[] args) {
         Conta c1 = new Conta();    // 0x10
+        c1.setNome("c1");
         c1.setAgencia(0001);
         c1.setNumero(1234);
         c1.setSaldo(100);
 
         Conta c2 = new Conta();    //0x11
+        c2.setNome("c2");
         c2.setAgencia(0001) ;
         c2.setNumero(1234);
         c2.setSaldo(100);
 
         Conta c3 = new Conta();    //0x12
+        c3.setNome("c3");
         c3.setAgencia(0001);
         c3.setNumero(1234);
         c3.setSaldo(100);
@@ -47,6 +50,13 @@ public class BesMain extends Conta {
         System.out.println(c1.getSaldo() + " ---- " + c1.getTaxaDeJuros());  // 400  ---- 0.02
         System.out.println(c2.getSaldo() + " ---- " + c2.getTaxaDeJuros());  // 700  ---- 0.02
         System.out.println(c3.getSaldo() + " ---- " + c3.getTaxaDeJuros());  // 400  ---- 0.02
+
+        c2.transferir(100, c3);
+
+        System.out.println("--------------------------------");
+        System.out.println(c1.getSaldo() + " ---- " + c1.getTaxaDeJuros());  // 400  ---- 0.02
+        System.out.println(c2.getSaldo() + " ---- " + c2.getTaxaDeJuros());  // 600  ---- 0.02
+        System.out.println(c3.getSaldo() + " ---- " + c3.getTaxaDeJuros());  // 500  ---- 0.02
 
     }
 
